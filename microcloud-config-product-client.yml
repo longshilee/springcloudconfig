@@ -40,7 +40,7 @@ management:
   endpoints:
     web:
       exposure:
-        include: *
+        include: '*'
 
 info:
   blog-url: http://lisl.cn
