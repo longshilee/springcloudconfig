@@ -1,0 +1,102 @@
+spring:
+  profile:
+    active:
+      - dev
+
+---
+server:
+  port: 8080
+spring:
+  profile: dev
+  application:
+    name: sc-product
+  datasource:
+  driverClassName: com.mysql.jdbc.Driver
+  url: jdbc:mysql://localhost:3306/springcloud?serverTimezone=GMT%2B8
+  username: root
+  password: password
+  devtools:
+    remote:
+      restart:
+        enabled: true
+
+mybatis:
+  mapperLocations: classpath:mapping/*xml
+
+logging:
+  level.com.lisl.mapper: debug
+
+eureka:
+  client:
+  service-url:
+    defaultZone: http://admin:lisl@eureka1:7001/eureka,http://admin:lisl@eureka2:7002/eureka,http://admin:lisl@eureka3:7003/eureka
+  instance:
+    instance-id: sc-product
+    prefer-ip-address: true
+    lease-renewal-interval-in-seconds: 2  #设置心跳的时间间隔（默认是30秒）
+    lease-expiration-duration-in-seconds: 5 #表示距离上一次发送心跳之后等待下一次发送心跳的间隔时间，如果超过了此间隔时间，则认为该微服务已经宕机了。（默认是90秒）
+
+management:
+  endpoints:
+    web:
+      exposure:
+        include: *
+
+info:
+  blog-url: http://lisl.cn
+  author: lisl
+  version: @project.version@
+  app:
+    name: sc-product
+  build:
+    artifactId: $project.artifactId$
+    modelVersion: $project.modelVersion$
+
+---
+server:
+  port: 8081
+spring:
+  profile: beta
+  application:
+    name: sc-product
+  datasource:
+  driverClassName: com.mysql.jdbc.Driver
+  url: jdbc:mysql://localhost:3306/springcloud?serverTimezone=GMT%2B8
+  username: root
+  password: password
+  devtools:
+    remote:
+      restart:
+        enabled: true
+
+mybatis:
+  mapperLocations: classpath:mapping/*xml
+
+logging:
+  level.com.lisl.mapper: debug
+
+eureka:
+  client:
+  service-url:
+    defaultZone: http://admin:lisl@eureka1:7001/eureka,http://admin:lisl@eureka2:7002/eureka,http://admin:lisl@eureka3:7003/eureka
+  instance:
+    instance-id: sc-product
+    prefer-ip-address: true
+    lease-renewal-interval-in-seconds: 2  #设置心跳的时间间隔（默认是30秒）
+    lease-expiration-duration-in-seconds: 5 #表示距离上一次发送心跳之后等待下一次发送心跳的间隔时间，如果超过了此间隔时间，则认为该微服务已经宕机了。（默认是90秒）
+
+management:
+  endpoints:
+    web:
+      exposure:
+        include: *
+
+info:
+  blog-url: http://lisl.cn
+  author: lisl
+  version: @project.version@
+  app:
+    name: sc-product
+  build:
+    artifactId: $project.artifactId$
+    modelVersion: $project.modelVersion$
