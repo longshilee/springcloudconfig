@@ -18,8 +18,8 @@ eureka:
 
 info:
   app:
-    name: config-client-dev
-  user: lisl
+    name: config-client-dev1111
+  user: lislee
 ---
 server:
   port: 8102
