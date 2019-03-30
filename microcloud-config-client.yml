@@ -18,7 +18,7 @@ eureka:
 
 info:
   app:
-    name: config-client-dev1111
+    name: config-client-dev2222
   user: lislee
 ---
 server:
