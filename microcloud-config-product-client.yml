@@ -45,7 +45,7 @@ management:
 info:
   blog-url: http://lisl.cn
   author: lisl
-  version: @project.version@
+  version: $project.version$
   app:
     name: sc-product
   build:
@@ -94,7 +94,7 @@ management:
 info:
   blog-url: http://lisl.cn
   author: lisl
-  version: @project.version@
+  version: $project.version$
   app:
     name: sc-product
   build:
