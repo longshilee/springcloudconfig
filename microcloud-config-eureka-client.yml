@@ -1,5 +1,5 @@
 spring:
-  profile:
+  profiles:
     active:
       - dev
 ---
@@ -22,7 +22,7 @@ spring:
     user:
       name: admin
       password: lisl
-  profile: dev
+  profiles: dev
 
 ---
 server:
@@ -44,4 +44,4 @@ spring:
     user:
       name: admin
       password: lisl
-  profile: beta
+  profiles: beta

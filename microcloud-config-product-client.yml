@@ -1,5 +1,5 @@
 spring:
-  profile:
+  profiles:
     active:
       - dev
 
@@ -7,7 +7,7 @@ spring:
 server:
   port: 8080
 spring:
-  profile: dev
+  profiles: dev
   application:
     name: sc-product
   datasource:
@@ -56,7 +56,7 @@ info:
 server:
   port: 8081
 spring:
-  profile: beta
+  profiles: beta
   application:
     name: sc-product
   datasource:
